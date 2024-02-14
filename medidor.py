@@ -1,3 +1,4 @@
+# Bibliotecas
 from serial import Serial
 from datetime import datetime
 import tkinter as tk
@@ -42,7 +43,7 @@ def verificar_porta_serial():
         umidade = lista_dados[1][:5]
 
         with open('log_medicoes.csv', 'a+') as medicoes:
-            medicoes.seek(0)
+            medicoes.seek(0)# Volta para o inicio do arquivo de texto
             linhas = medicoes.readlines()
 
             if len(linhas) > 0:# Se existir valores no arquivo colocara os valores registrados
